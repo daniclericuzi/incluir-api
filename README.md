@@ -8,14 +8,14 @@
 
 #### GET: /avaliacao/estabelecimento
 
-http://localhost:5000/avaliacao/estabelecimentoId
+http://localhost:porta/avaliacao/estabelecimentoId
 
 Objetivo: Retornar todas as avaliações por estabelecimento
 Acesso: Publico
 
 Não é passado body.
 
-Reposta [200]
+**Reposta [200]**
 
 Retornará as avaliações cadastradas por estabelecimento, buscando por seu ID.
 
@@ -37,7 +37,7 @@ Retornará as avaliações cadastradas por estabelecimento, buscando por seu ID.
         "__v": 0
     }
 
-Reposta [404]
+**Reposta [404]**
 {
     "Não há avaliações para este estabelecimento"	
 }
@@ -49,7 +49,7 @@ http://localhost:porta/avaliacao/cadastrar
 Objetivo: Realizar cadastro de estabelecimentos
 Acesso: Privado (usuário precisa ter cadastro e estar logado para poder realizar o cadastro de uma avaliação)
 
-Body:
+**Body:**
 
 {
     "userId": "5fd2b3a24ae71d45c00e159e",
@@ -65,7 +65,7 @@ Body:
    "avaliacaoGeral": 5
 }
 
-Reposta [200]
+**Reposta [200]**
 
    {
         "_id": "5fd5591f5a4ce80017961388",
@@ -85,21 +85,23 @@ Reposta [200]
         "__v": 0
     }
     
-Reposta [400]
+**Reposta [400]**
+
 Ao tentar atribuir notaBanheiro passando banheiro false:
 
 {
     "Não é possível dar nota banheiro"	
 }
 
-Reposta [400]
+**Reposta [400]**
+
 Ao tentar dar atribuir notaSinalizacao passando sinalizacao false:
 
 {
     "Não é possível dar nota Sinalizacao"	
 }
 
-Reposta [400]
+**Reposta [400]**
 Usuário tentando realizar avalialão para estabelecimentoId já avaliado:
 
 {
@@ -116,7 +118,7 @@ Acesso: Privado
 
 Não é passado body
 
-Reposta [200]
+**Reposta [200]**
 
 {
     "Avaliação removida"	
@@ -134,7 +136,7 @@ Acesso: Publico
 
 Não é passado body.
 
-Reposta [200]
+**Reposta [200]**
 
 Retornará todos os estabelecimentos cadastrados em JSON:
 
@@ -149,7 +151,8 @@ Retornará todos os estabelecimentos cadastrados em JSON:
         "__v": 0
     }
 
-Reposta [404]
+**Reposta [404]**
+
 {
     "Não há estabelecimentos cadastrado"	
 }
@@ -163,7 +166,7 @@ Acesso: Publico
 
 Não é passado body.
 
-Reposta [200]
+**eposta [200]**
 
 Retornará todos os estabelecimentos cadastrados para a cidade informada:
 
@@ -217,7 +220,7 @@ http://localhost:5000/estabelecimentos/tipo
 Objetivo: Retornar todos os estabelecimentos cadastrados por tipo
 Acesso: Publico
 
-Reposta [200]
+**Reposta [200]**
 
 Retornará todos os estabelecimentos cadastrados para o tipo informado:
 
@@ -232,7 +235,8 @@ Retornará todos os estabelecimentos cadastrados para o tipo informado:
         "__v": 0
     }
 
-Reposta [404]
+**Reposta [404]**
+
 {
     "Não há estabelecimentos cadastrado"	
 }
@@ -244,7 +248,7 @@ http://localhost:porta/estabelecimentos/cadastrar
 Objetivo: Realizar cadastro de estabelecimentos
 Acesso: Privado (apenas o admin realiza o cadastro de estabelecimentos)
 
-Body:
+**Body:**
 
 {
 "nome": "Shopping Patteo Olinda",
@@ -253,7 +257,7 @@ Body:
 "tipo": "Shopping"
 }
 
-Resposta [200]
+**Resposta [200]**
 
 {
         "_id": "5fd556635a4ce80017961385",
@@ -265,7 +269,7 @@ Resposta [200]
         "updatedAt": "2020-12-12T23:46:43.607Z",
 }
 
-Reposta [400]
+**Reposta [400]**
 
 Ao tentar realizar o cadastro de um estabelecimento com o mesmo nome de um já cadastrado:
 
@@ -282,20 +286,20 @@ Acesso: Privado
 
 O Id deverá ser informado na URI
 
-Body (campos a ser atualizados):
+**Body** (campos a ser atualizados):
 
 {
 "nome": "Shopping Patteo",
 "endereco": "R. Carmelita Muniz de Araújo, 652 - Casa Caiada",
 }
 
-Resposta [200]
+**Resposta [200]**
 
 {   
     "message": " ID foi atualizado."
 }
 
-Reposta [400]
+**Reposta [400]**
 
 Ao informar um ID inválido:
 
@@ -303,7 +307,7 @@ Ao informar um ID inválido:
     "Id invalido"	
 }
 
-Reposta [400]
+**Reposta [400]**
 
 Ao informar um ID válido porém que não está cadastrado:
 
@@ -320,7 +324,7 @@ Acesso: Privado
 
 Não é passado body
 
-Reposta [200]
+**Reposta [200]**
 
 {
     "Estabelecimento removido da base"	
@@ -336,7 +340,7 @@ http://localhost:porta/users/cadastro
 Objetivo: Realizar cadastro de usuário
 Acesso: Público
 
-Body:
+**Body:**
 
 {
 "nome": "Rafaela",
@@ -347,13 +351,13 @@ Body:
 "senha": "abc12345678"
 }
 
-Retorno [200]
+**Retorno [200]**
 
 {
     "mensagem": "Cadastro realizado com sucesso"
 }
 
-Reposta [400]
+**Reposta [400]**
 
 Ao cadastrar uma conta utilizando e-mail já cadastrado
 
@@ -372,7 +376,7 @@ Acesso: Privado
 
 Não é passado body
 
-Reposta [200]
+**Reposta [200]**
 
 {
     "Cadastro removido com sucesso"	
@@ -388,14 +392,14 @@ http://localhost:porta/users/login
 Objetivo: Realizar login de usuário
 Acesso: Privado
 
-Body: 
+**Body:** 
 
 {
       "email": "rafaela@teste.com.br",
       "senha": "abcd12345678"
 }
 
-Resposta [200]:
+**Resposta [200]**
 
 {
     "user": {
@@ -405,7 +409,7 @@ Resposta [200]:
     "token": "eyGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZDU1NDY3NWE0Y2U4MDAxNzk2MTM4MiIsImlhdCI6MTYwNzgxOTAyMiwiZXhwIjoxNjA4NDIzODIyfQ.Z0ljGnKbjQlJvBiRnGXeytR3SLsHS1BqRa5G5mS7xm8"
 }
 
-Reposta [401]
+**Reposta [401]**
 {
     "error": "senha errada"
 }
